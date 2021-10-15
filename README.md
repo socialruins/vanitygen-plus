@@ -52,8 +52,8 @@ Windows GPU: `oclvanitygen.exe -C RTM -o results.txt -i -k RTEST`
 
 Example output of above command:  
 >Generating RTM Address                                                                    
->RTM Address: bTEST6jSVcid5MQAJBrGUR6MLDpdyb8oiQ  
->RTM Privkey: wrRxctq3f7A1zkpyWoZRifRk5eAC2UM9idh83SPLhz6gAFfqdL  
+>RTM Address: RTeSTTHtY5MA5yqoh8o2skmyFS9rGivq2q  
+>RTM Privkey: 5J2SBycVYwLSyoKuKFv2sAWWQRGQ5ZuEVFq3bZGNeZ58bTAUiu  
 
 -----
 Encrypting and Decrypting a vanitygen or oclvanitygen private key  
