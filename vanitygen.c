@@ -544,6 +544,7 @@ main(int argc, char **argv)
 					"RDD : Reddcoin : R\n"
 					"RIC : Riecoin : R\n"
 					"ROI : ROIcoin: R\n"
+					"RTM : Raptoreum: R\n"
 					"RVN : Ravencoin : R\n"
 					"SCA : Scamcoin : S\n"
 					"SDC : Shadowcoin : S\n"
@@ -1491,6 +1492,13 @@ main(int argc, char **argv)
 			if (strcmp(optarg, "RVN")== 0) {
 				fprintf(stderr,
 					"Generating Ravencoin Address\n");
+					addrtype = 60;
+					privtype = 128;
+					break;
+			}
+			if (strcmp(optarg, "RTM")== 0) {
+				fprintf(stderr,
+					"Generating Raptoreum Address\n");
 					addrtype = 60;
 					privtype = 128;
 					break;
