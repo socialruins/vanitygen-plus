@@ -187,6 +187,7 @@ main(int argc, char **argv)
 					"RDD : Reddcoin : R\n"
 					"RIC : Riecoin : R\n"
 					"ROI : ROIcoin : R\n"
+					"RTM : Raptoreum : R\n"
 					"RVN : Ravencoin : R\n"
 					"SCA : Scamcoin : S\n"
 					"SDC : Shadowcoin : S\n"
@@ -1130,6 +1131,13 @@ main(int argc, char **argv)
 			}
 			else
 			if (strcmp(optarg, "RVN")== 0) {
+				fprintf(stderr,
+					"Decrypting Ravencoin Address\n");
+					addrtype_opt = 60;
+					privtype_opt = 128;
+					break;
+			}
+			if (strcmp(optarg, "RTM")== 0) {
 				fprintf(stderr,
 					"Decrypting Ravencoin Address\n");
 					addrtype_opt = 60;
