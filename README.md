@@ -2,25 +2,10 @@
 Vanitygen PLUS!  
 -----
 
-**Download the latest binary from: https://github.com/exploitagency/vanitygen-plus/releases !**  
-
 Note: For generating a Zcash or Zclassic address please see the Z repo: https://github.com/exploitagency/vanitygen_z
 
-Forked from samr7/vanitygen ,  
-then modified by Corey Harding  
-to support various Alt-Coins,  
-and with the following changes:  
+Forked from samr7/vanitygen and exploitagency/vanitygen-plus, then modified by socialruins to support RTM
 
- + Generate vanity addresses for 80+ coins! with mods by Corey Harding  
- + I also removed the prefix length limit to search for longer addresses.   
- + Manually merge changes from: cryptapus For -Y privkey values  
- + Manually merge changes from: elichai For keyconv decrypt  
- + Manually merge changes from: salfter For compressed key support  
- + Manually merge changes from: WyseNynja For oclvanityminer updates  
- + Manually merge changes from: Rytiss For Initialize bn_zero to allow Intel CPU OpenCL compilation  
- + Manually merge changes from: fizzisist For Document -P option  
- + Manually merge changes from: bitkevin For fix hd 68/69xx, 7xxx   
- + Manually merge changes from: wolf9466 For Groestlcoin address support  
 
 **WARNING!** This program has not been thoroughly tested.  Please attempt importing an address first.  
 Send a tiny amount you don't mind losing to the address.  Then perform a test spend.  
@@ -34,16 +19,6 @@ If you have an altcoin you would like to add please let me know.
 -----
 Getting Started  
 -----  
-**Download the latest binary from: https://github.com/exploitagency/vanitygen-plus/releases !**  
-Linux Binary (Compiled on 64bit Debian Testing)  
-Windows Binary (Compiled on Win10 64bit)  
-
-Extract the files,  
-open a terminal/command prompt,  
-change to directory containing vanitygen-plus binaries.  
-
-Running On Linux: `./vanitygen -ARGS`, or `./oclvanitygen -ARGS`, `./keyconv -ARGS`, etc  
-Running On Windows: `vanitygen.exe -ARGS`, `oclvanitygen.exe -ARGS`, `keyconv.exe -ARGS`, etc  
 
 **For generating addresses using the CPU(slower) use: vanitygen !**  
 **For generating addresses using the GPU(faster) use: oclvanitygen !**  
@@ -61,45 +36,25 @@ Windows GPU: `oclvanitygen.exe -C LIST`
 A list of all the supported crypto coins will be output.  
 
 Choose your coin from the list noting the ARGUMENT needed for the coin located in the left hand column.  
-For LBRY it is simply LBRY.  For Bitcoin it is BTC.  Etc...  
+For RTM it is simply RTM.  For Bitcoin it is BTC.  Etc...  
 
-**Now lets generate a LBRY address with the prefix "bTEST":**  
-Linux CPU: `./vanitygen -C LBRY -o results.txt -i -k bTEST`  
-Linux GPU: `./oclvanitygen -C LBRY -o results.txt -i -k bTEST`  
-Windows CPU: `vanitygen.exe -C LBRY -o results.txt -i -k bTEST`  
-Windows GPU: `oclvanitygen.exe -C LBRY -o results.txt -i -k bTEST`  
+**Now lets generate a RTM address with the prefix "RTEST":**  
+Linux CPU: `./vanitygen -C RTM -o results.txt -i -k RTEST`  
+Linux GPU: `./oclvanitygen -C RTM -o results.txt -i -k RTEST`  
+Windows CPU: `vanitygen.exe -C RTM -o results.txt -i -k RTEST`  
+Windows GPU: `oclvanitygen.exe -C RTM -o results.txt -i -k RTEST`  
 
- * `-C LBRY` : Chooses the LBRY coin  
+ * `-C RTM` : Chooses the RTM coin  
  * `-o results.txt` : saves the matches to results.txt  
  * `-i` : case-Insensitive(do not add this flag to match exact case)  
  * `-k` : keep going even after match is found(do not add this flag to stop after the first match)  
- * `bTEST` : the address you are searching for(LBRY addresses start with "b")  
+ * `RTEST` : the address you are searching for(RTM addresses start with "R")  
 
 Example output of above command:  
->Generating LBRY Address  
->Difficulty: 4553521  
->LBRY Pattern: bTEST                                                                   
->LBRY Address: bTEST6jSVcid5MQAJBrGUR6MLDpdyb8oiQ  
->LBRY Privkey: wrRxctq3f7A1zkpyWoZRifRk5eAC2UM9idh83SPLhz6gAFfqdL  
+>Generating RTM Address                                                                    
+>RTM Address: bTEST6jSVcid5MQAJBrGUR6MLDpdyb8oiQ  
+>RTM Privkey: wrRxctq3f7A1zkpyWoZRifRk5eAC2UM9idh83SPLhz6gAFfqdL  
 
-**If you have dependency errors on Linux  
-or need instructions for compiling from source(Kaling Rolling/Linux) see link below:**  
-https://legacysecuritygroup.com/index.php/projects/recent/12-software/35-oclvanitygen-compiling-and-use  
-
-------  
-Fix libcrypto.so.1.0.2 error(Debian, Ubuntu)  
-------  
-Error:
->./vanitygen: error while loading shared libraries: libcrypto.so.1.0.2: cannot open shared object file: No such file or directory  
-
-Fix it by issuing the below commands, in turn either installing or downgrading libcrypto.  The error comes from an incompatibility with the newer version of libcrypto.  Most older projects have this same bug.  
-```
-wget http://ftp.us.debian.org/debian/pool/main/g/glibc/libc6-udeb_2.24-11+deb9u3_amd64.udeb
-dpkg -i libc6-udeb_2.24-11+deb9u3_amd64.udeb
-wget http://ftp.us.debian.org/debian/pool/main/o/openssl1.0/libcrypto1.0.2-udeb_1.0.2l-2+deb9u3_amd64.udeb
-dpkg -i libcrypto1.0.2-udeb_1.0.2l-2+deb9u3_amd64.udeb
-rm libc6-udeb_2.24-11+deb9u3_amd64.udeb && rm libcrypto1.0.2-udeb_1.0.2l-2+deb9u3_amd64.udeb 
-```
 -----
 Encrypting and Decrypting a vanitygen or oclvanitygen private key  
 -----  
@@ -230,6 +185,7 @@ Current List of Available Coins for Address Generation
 |RDD | Reddcoin | R  |
 |RIC | Riecoin | R  |
 |ROI | ROIcoin | R  |
+|RTM | Raptoreum | R |
 |RVN | Ravencoin | R |
 |SCA | Scamcoin | S  |
 |SDC | Shadowcoin | S  |
@@ -255,7 +211,3 @@ Current List of Available Coins for Address Generation
 |ZNY | BitZeny | Z  |
 |ZOOM | Zoom coin | i  |
 |ZRC | Ziftrcoin | Z  |
-
-**If you found this repo useful, please consider a donation.  Thank You!**  
-
- * Donate Bitcoin: 1egacySQXJA8bLHnFhdQQjZBLW1gxSAjc  
