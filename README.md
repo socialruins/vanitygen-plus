@@ -51,7 +51,9 @@ Windows GPU: `oclvanitygen.exe -C RTM -o results.txt -i -k RTEST`
  * `RTEST` : the address you are searching for(RTM addresses start with "R")  
 
 Example output of above command:  
->Generating RTM Address                                                                    
+>Generating Raptoreum Address  
+>Difficulty: 569190  
+>RTM Pattern: RTEST  
 >RTM Address: RTeSTTHtY5MA5yqoh8o2skmyFS9rGivq2q  
 >RTM Privkey: 5J2SBycVYwLSyoKuKFv2sAWWQRGQ5ZuEVFq3bZGNeZ58bTAUiu  
 
